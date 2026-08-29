@@ -1,0 +1,27 @@
+# Maven build output
+target/
+
+# Compiled classes
+*.class
+
+# Packaged artifacts
+*.war
+*.jar
+
+# Local runtime configuration (contains real DB / SMTP credentials - never commit this)
+src/main/resources/app.properties
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+.settings/
+.classpath
+.project
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
