@@ -1,0 +1,87 @@
+/* ================================================================
+   SUNRISE DENTAL CLINIC - PRINT STYLESHEET
+   Controls what gets printed
+   ================================================================ */
+
+@media print {
+
+    /* Hide everything by default */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Show only invoice content */
+    .invoice-paper,
+    .invoice-paper * {
+        visibility: visible;
+    }
+
+    /* Show help manual when printing */
+    .help-chapter,
+    .help-chapter * {
+        visibility: visible;
+        display: block !important;
+    }
+
+    /* Position invoice for printing */
+    .invoice-paper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+        border: none;
+    }
+
+    /* Hide screen-only elements */
+    .no-print,
+    .navbar,
+    .app-footer,
+    .page-title-bar,
+    .invoice-actions,
+    .help-tabs,
+    .help-actions,
+    .btn,
+    .toast {
+        display: none !important;
+    }
+
+    /* Page setup */
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    /* Invoice specific print styles */
+    .inv-header {
+        display: flex !important;
+        flex-wrap: wrap;
+    }
+
+    .inv-info-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .inv-items-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    .inv-items-table th,
+    .inv-items-table td {
+        border: 1px solid #e5e7eb !important;
+        padding: 8px 12px !important;
+    }
+
+    /* Page break handling */
+    .invoice-paper {
+        page-break-after: always;
+    }
+
+    tr {
+        page-break-inside: avoid;
+    }
+}
